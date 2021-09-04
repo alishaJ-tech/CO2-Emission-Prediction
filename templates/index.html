@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+  <meta charset="UTF-8">
+  <title>CO2 Emission API</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+  
+</head>
+
+<body>
+
+ <div class="login">
+	<h1>co2 prediction</h1>
+
+    
+    <form action="{{ url_for('predict')}}"method="post">
+    	<input type="text" name="Engine Size(L)" placeholder="engine" required="required" />
+        <input type="text" name="Cylinders" placeholder="cylinder" required="required" />
+        <input type="text" name="Fuel Consumption City (L/100 km)" placeholder="fuel consumption city" required="required" />
+		<input type="text" name="Fuel Consumption Hwy (L/100 km)" placeholder="fuel consumption hwy" required="required" />
+        <input type="text" name="Fuel Consumption Comb (L/100 km)" placeholder="fuel consumption comb (L/100 km) " required="required" />
+        <input type="text" name="Fuel Consumption Comb (mpg)" placeholder="fuel consumption Comb (mpg)" required="required" />
+        
+
+        <button type="submit" class="btn btn-primary btn-block btn-large">CO2 Prediction</button>
+    </form>
+
+   <br>
+   <br>
+   {{ prediction_text }}
+
+ </div>
+
+
+</body>
+</html>
